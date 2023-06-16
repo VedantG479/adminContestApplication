@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "339524859651",
+    "project_id": "esportscontest-45d92",
+    "storage_bucket": "esportscontest-45d92.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339524859651:android:3a01f8564c9136b9961b36",
+        "android_client_info": {
+          "package_name": "com.example.adminapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "339524859651-j2ths4643r9u23qideilehhu98uhb8mi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIb4CIg3FTnXyaKbfEPIGEcSjyXB5jnP0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "339524859651-j2ths4643r9u23qideilehhu98uhb8mi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
