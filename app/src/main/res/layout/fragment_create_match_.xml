@@ -2,9 +2,77 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/white"
+    android:background="@color/black"
+    android:clickable="true"
+    android:focusable="true"
     android:layout_height="match_parent"
     tools:context=".CreateMatch_Fragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Match Date"
+            android:id="@+id/match_Date"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Match Time"
+            android:id="@+id/match_time"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Reference ID"
+            android:id="@+id/reference_ID"
+            android:inputType="number"
+            android:maxLength="5"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Slots"
+            android:id="@+id/slots"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Match Charge"
+            android:id="@+id/match_charge"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Pool Prizes"
+            android:id="@+id/rewards"/>
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner1"
+            android:spinnerMode="dropdown"
+            android:background="@android:drawable/btn_dropdown"/>
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner2"
+            android:spinnerMode="dropdown"
+            android:background="@android:drawable/btn_dropdown"/>
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:background="@android:color/darker_gray"
+            android:id="@+id/imageView"/>
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Upload Image"
+            android:id="@+id/upload_ImageBtn"/>
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Upload"
+            android:id="@+id/upload"/>
 
+
+    </LinearLayout>
 
 </FrameLayout>
