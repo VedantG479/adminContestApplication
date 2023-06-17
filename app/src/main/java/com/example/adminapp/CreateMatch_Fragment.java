@@ -116,7 +116,42 @@ public class CreateMatch_Fragment extends Fragment {
     }
 
     private void checkValidation(){
-        uploadImage();
+        if(match_Date.getText().toString().isEmpty()){
+            match_Date.setError("Empty");
+            match_Date.requestFocus();
+        }
+        else if(match_Time.getText().toString().isEmpty()){
+            match_Time.setError("Empty");
+            match_Time.requestFocus();
+        }
+        else if(reference_ID.getText().toString().isEmpty()){
+            reference_ID.setError("Empty");
+            reference_ID.requestFocus();
+        }
+        else if(slots.getText().toString().isEmpty()){
+            slots.setError("Empty");
+            slots.requestFocus();
+        }
+        else if(match_Charge.getText().toString().isEmpty()){
+            match_Charge.setError("Empty");
+            match_Charge.requestFocus();
+        }
+        else if(rewards.getText().toString().isEmpty()){
+            rewards.setError("Empty");
+            rewards.requestFocus();
+        }
+        else if (category1.equals("Select Match Duration")){
+            Toast.makeText(getContext(),"please select match duration",Toast.LENGTH_SHORT).show();
+        }
+        else if (category2.equals("Select Match Category")){
+            Toast.makeText(getContext(),"please select match category",Toast.LENGTH_SHORT).show();
+        }
+        else if(bitmap==null){
+            Toast.makeText(getContext(),"Please select an image",Toast.LENGTH_SHORT).show();
+        }
+        else{
+            uploadImage();
+        }
     }
 
     private void uploadImage(){
