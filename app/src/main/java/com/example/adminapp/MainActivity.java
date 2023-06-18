@@ -32,11 +32,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 CreateMatch_Fragment createMatch_fragment = new CreateMatch_Fragment();
                 fragmentManager.beginTransaction().replace(R.id.frame_layout,createMatch_fragment).addToBackStack("home").commit();
                 break;
-            case R.id.deleteCard:
+            case R.id.UploadCard:
                 UploadFragment uploadFragment = new UploadFragment();
                 fragmentManager.beginTransaction().replace(R.id.frame_layout,uploadFragment).addToBackStack("home").commit();
                 break;
-            case R.id.UploadCard:
+            case R.id.deleteCard:
                 DeleteMatch_Fragment deleteMatch_fragment = new DeleteMatch_Fragment();
                 fragmentManager.beginTransaction().replace(R.id.frame_layout,deleteMatch_fragment).addToBackStack("home").commit();
                 break;
