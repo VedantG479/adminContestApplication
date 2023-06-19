@@ -1,6 +1,8 @@
 package com.example.adminapp;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.media.Image;
@@ -27,8 +29,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -47,7 +52,7 @@ public class CreateMatch_Fragment extends Fragment {
     private Bitmap bitmap;
     private String category1, category2;
     private ProgressDialog pd;
-    private DatabaseReference reference;
+    private DatabaseReference reference,reference2,query;
     private StorageReference storageReference;
 
     @Override
@@ -68,6 +73,8 @@ public class CreateMatch_Fragment extends Fragment {
         imageView=view.findViewById(R.id.imageView);
         pd = new ProgressDialog(getContext());
         reference = FirebaseDatabase.getInstance().getReference().child("Matches");
+        reference2 = FirebaseDatabase.getInstance().getReference().child("Reference numbers");
+        query = FirebaseDatabase.getInstance().getReference().child("Reference numbers");
         storageReference = FirebaseStorage.getInstance().getReference();
 
         String[] items = new String[]{"Select Match Duration","Morning","Afternoon","Evening"};
@@ -116,42 +123,74 @@ public class CreateMatch_Fragment extends Fragment {
     }
 
     private void checkValidation(){
-        if(match_Date.getText().toString().isEmpty()){
-            match_Date.setError("Empty");
-            match_Date.requestFocus();
-        }
-        else if(match_Time.getText().toString().isEmpty()){
-            match_Time.setError("Empty");
-            match_Time.requestFocus();
-        }
-        else if(reference_ID.getText().toString().isEmpty()){
-            reference_ID.setError("Empty");
-            reference_ID.requestFocus();
-        }
-        else if(slots.getText().toString().isEmpty()){
-            slots.setError("Empty");
-            slots.requestFocus();
-        }
-        else if(match_Charge.getText().toString().isEmpty()){
-            match_Charge.setError("Empty");
-            match_Charge.requestFocus();
-        }
-        else if(rewards.getText().toString().isEmpty()){
-            rewards.setError("Empty");
-            rewards.requestFocus();
-        }
-        else if (category1.equals("Select Match Duration")){
-            Toast.makeText(getContext(),"please select match duration",Toast.LENGTH_SHORT).show();
-        }
-        else if (category2.equals("Select Match Category")){
-            Toast.makeText(getContext(),"please select match category",Toast.LENGTH_SHORT).show();
-        }
-        else if(bitmap==null){
-            Toast.makeText(getContext(),"Please select an image",Toast.LENGTH_SHORT).show();
-        }
-        else{
-            uploadImage();
-        }
+        String id  = reference_ID.getText().toString();
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(match_Date.getText().toString().isEmpty()){
+                    match_Date.setError("Empty");
+                    match_Date.requestFocus();
+                }
+                else if(match_Time.getText().toString().isEmpty()){
+                    match_Time.setError("Empty");
+                    match_Time.requestFocus();
+                }
+                else if(reference_ID.getText().toString().isEmpty()){
+                    reference_ID.setError("Empty");
+                    reference_ID.requestFocus();
+                }
+                else if(slots.getText().toString().isEmpty()){
+                    slots.setError("Empty");
+                    slots.requestFocus();
+                }
+                else if(match_Charge.getText().toString().isEmpty()){
+                    match_Charge.setError("Empty");
+                    match_Charge.requestFocus();
+                }
+                else if(rewards.getText().toString().isEmpty()){
+                    rewards.setError("Empty");
+                    rewards.requestFocus();
+                }
+                else if (category1.equals("Select Match Duration")){
+                    Toast.makeText(getContext(),"please select match duration",Toast.LENGTH_SHORT).show();
+                }
+                else if (category2.equals("Select Match Category")){
+                    Toast.makeText(getContext(),"please select match category",Toast.LENGTH_SHORT).show();
+                }
+                else if(bitmap==null){
+                    Toast.makeText(getContext(),"Please select an image",Toast.LENGTH_SHORT).show();
+                }
+                else if(snapshot.hasChild(id)){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    builder.setMessage("this reference ID is already used");
+                    builder.setCancelable(true);
+                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    });
+                    AlertDialog dialog = null;
+                    try{
+                        dialog=builder.create();
+                    }
+                    catch (Exception e){
+                        e.printStackTrace();
+                    }
+                    if(dialog!=null){
+                        dialog.show();
+                    }
+                }
+                else{
+                    uploadImage();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void uploadImage(){
@@ -212,7 +251,10 @@ public class CreateMatch_Fragment extends Fragment {
         String time = currentTime.format(callForTime.getTime());
 
         Match_Data match_data = new Match_Data(date,time,referID,matchCharge,slot,matchDate,matchTime,uri.toString(),category1,category2,roomID,roomPass,reward);
+        Reference_Data reference_data = new Reference_Data(referID);
         reference.child(category1).child(referID).setValue(match_data);
+        reference2.child(referID).setValue(reference_data);
+
     }
 
     private void openGallery(){

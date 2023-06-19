@@ -18,6 +18,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.annotations.NotNull;
 
 import java.util.ArrayList;
 
@@ -43,7 +44,7 @@ public class Afternoon_Fragment extends Fragment {
     private void getData(){
         reference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
                 list = new ArrayList<>();
                 for(DataSnapshot snapshot1: snapshot.getChildren()){
                     Match_Data data = snapshot1.getValue(Match_Data.class);
@@ -56,8 +57,8 @@ public class Afternoon_Fragment extends Fragment {
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getContext(),"No Data Found",Toast.LENGTH_SHORT).show();
+            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                Toast.makeText(getContext(),"No Data Found"+error.getMessage(),Toast.LENGTH_SHORT).show();
                 progressBar.setVisibility(View.GONE);
             }
         });
