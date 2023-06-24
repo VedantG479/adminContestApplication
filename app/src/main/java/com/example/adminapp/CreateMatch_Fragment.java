@@ -77,8 +77,8 @@ public class CreateMatch_Fragment extends Fragment {
         query = FirebaseDatabase.getInstance().getReference().child("Reference numbers");
         storageReference = FirebaseStorage.getInstance().getReference();
 
-        String[] items = new String[]{"Select Match Duration","Morning","Afternoon","Evening"};
-        spinner1.setAdapter(new ArrayAdapter<String>(getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,items));
+        String[] items = new String[]{"select match duration..","Morning","Afternoon","Evening"};
+        spinner1.setAdapter(new ArrayAdapter<String>(getContext(),R.layout.spinner_design,items));
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -91,8 +91,8 @@ public class CreateMatch_Fragment extends Fragment {
             }
         });
 
-        String[] items2 = new String[]{"Select Match Category","Erangel","Livik","TDM"};
-        spinner2.setAdapter(new ArrayAdapter<String>(getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,items2));
+        String[] items2 = new String[]{"select match category..","Erangel","Livik","TDM"};
+        spinner2.setAdapter(new ArrayAdapter<String>(getContext(),R.layout.spinner_design,items2));
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

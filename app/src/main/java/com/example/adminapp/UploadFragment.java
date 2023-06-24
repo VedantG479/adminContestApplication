@@ -43,8 +43,8 @@ public class UploadFragment extends Fragment {
         upload = view.findViewById(R.id.upload);
         reference = FirebaseDatabase.getInstance().getReference().child("Matches");
 
-        String[] items = new String[]{"Select Match Duration","Morning","Afternoon","Evening"};
-        spinner.setAdapter(new ArrayAdapter<String>(getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,items));
+        String[] items = new String[]{"select match duration..","Morning","Afternoon","Evening"};
+        spinner.setAdapter(new ArrayAdapter<String>(getContext(), R.layout.spinner_design,items));
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
