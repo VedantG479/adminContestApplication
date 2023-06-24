@@ -11,64 +11,145 @@
     android:layout_height="match_parent"
     tools:context=".DeleteMatch_Fragment">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:gravity="center"
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="180dp"
                 android:id="@+id/morningCard"
+                android:layout_width="380dp"
                 android:layout_height="180dp"
                 android:layout_margin="5dp"
-                app:cardElevation="5dp"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp">
+
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/sanfro"
+                    android:gravity="center"
                     android:text="Morning Matches"
-                    android:gravity="center"/>
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="180dp"
-                android:id="@+id/afternoonCard"
-                android:layout_height="180dp"
-                android:layout_margin="5dp"
-                app:cardElevation="5dp"
-                app:cardCornerRadius="10dp">
+                    android:textColor="#3484F0"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Afternoon Matches"
-                    android:gravity="center"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="275dp"
+                    android:layout_marginTop="150dp"
+                    android:fontFamily="@font/sanfro"
+                    android:gravity="center"
+                    android:text="View Details >"
+                    android:textColor="#3484F0"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
+
         <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="180dp"
-                android:id="@+id/eveningCard"
+                android:id="@+id/afternoonCard"
+                android:layout_width="380dp"
                 android:layout_height="180dp"
                 android:layout_margin="5dp"
-                app:cardElevation="5dp"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp">
+
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Evening Matches"
-                    android:gravity="center"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/sanfro"
+                    android:gravity="center"
+                    android:text="Afternoon Matches"
+                    android:textColor="#3484F0"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="275dp"
+                    android:layout_marginTop="150dp"
+                    android:fontFamily="@font/sanfro"
+                    android:gravity="center"
+                    android:text="View Details >"
+                    android:textColor="#3484F0"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
-    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/eveningCard"
+                android:layout_width="380dp"
+                android:layout_height="180dp"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/sanfro"
+                    android:gravity="center"
+                    android:text="Evening Matches"
+                    android:textColor="#3484F0"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="275dp"
+                    android:layout_marginTop="150dp"
+                    android:fontFamily="@font/sanfro"
+                    android:gravity="center"
+                    android:text="View Details >"
+                    android:textColor="#3484F0"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

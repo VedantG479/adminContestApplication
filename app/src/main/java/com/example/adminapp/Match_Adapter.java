@@ -43,17 +43,17 @@ public class Match_Adapter extends RecyclerView.Adapter<Match_Adapter.matchViewA
     @Override
     public void onBindViewHolder(@NonNull @NotNull matchViewAdapter holder, int position) {
         Match_Data currentItem = list.get(position);
-        holder.matchTime.setText("hey: match_adapter.java"+currentItem.getMatchTime());
-        holder.matchDate.setText(currentItem.getMatchDate());
-        holder.uploadTime.setText(currentItem.getUploadTime());
-        holder.uploadDate.setText(currentItem.getUploadDate());
-        holder.referenceID.setText(currentItem.getReferID());
-        holder.RoomID.setText(currentItem.getRoom_Id());
-        holder.RoomPass.setText(currentItem.getRoom_pass());
-        holder.price.setText(currentItem.getMatchCharge());
-        holder.matchDuration.setText(currentItem.getMatchDuration());
-        holder.matchCategory.setText(currentItem.getMatchCategory());
-        holder.reward.setText(currentItem.getReward());
+        holder.matchTime.setText("Scheduled Date: "+currentItem.getMatchTime());
+        holder.matchDate.setText("Scheduled Time: "+currentItem.getMatchDate());
+        holder.uploadTime.setText("Creation Time: "+currentItem.getUploadTime());
+        holder.uploadDate.setText("Creation Date: "+currentItem.getUploadDate());
+        holder.referenceID.setText("Reference ID: "+currentItem.getReferID());
+        holder.RoomID.setText("Room ID: "+currentItem.getRoom_Id());
+        holder.RoomPass.setText("Room Password: "+currentItem.getRoom_pass());
+        holder.price.setText("Entry Amount: "+currentItem.getMatchCharge());
+        holder.matchDuration.setText("Match Duration: "+currentItem.getMatchDuration());
+        holder.matchCategory.setText("Match Category: "+currentItem.getMatchCategory());
+        holder.reward.setText("Reward: "+currentItem.getReward());
 
         Picasso.get().load(currentItem.getImageUrl()).into(holder.ticketImage);
         holder.deleteBtn.setOnClickListener(new View.OnClickListener() {

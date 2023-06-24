@@ -24,12 +24,22 @@
                     android:id="@+id/uploadDate"
                     android:layout_weight="1"
                     android:text="Upload Date: "
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/sanfro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:id="@+id/uploadTime"
                     android:layout_weight="1"
                     android:text="Upload Time: "
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/sanfro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
@@ -37,37 +47,73 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Reference ID"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/sanfro"
                 android:id="@+id/referenceID"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Room ID"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textColor="#3483F0"
+                android:fontFamily="@font/sanfro"
                 android:id="@+id/roomID"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Room Password"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/sanfro"
                 android:id="@+id/roomPass"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Price"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/sanfro"
                 android:id="@+id/price"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Match Duration"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/sanfro"
                 android:id="@+id/matchDuration"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Match Category"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/sanfro"
                 android:id="@+id/matchCategory"/>
             <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Match Rewards"
-            android:id="@+id/reward"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Match Rewards"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/sanfro"
+                android:id="@+id/reward"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -76,12 +122,24 @@
                     android:id="@+id/matchDate"
                     android:layout_weight="1"
                     android:text="Match Date: "
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="0dp"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="#3483F0"
+                    android:fontFamily="@font/sanfro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:id="@+id/matchTime"
                     android:layout_weight="1"
                     android:text="Match Time: "
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="0dp"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="#3483F0"
+                    android:fontFamily="@font/sanfro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
@@ -91,9 +149,14 @@
                 android:layout_height="wrap_content">
                 <Button
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:layout_margin="5dp"
                     android:text="Delete"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/sanfro"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@drawable/button_design"
                     android:id="@+id/deleteButton"/>
             </LinearLayout>
         </LinearLayout>
