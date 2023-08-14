@@ -109,9 +109,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
+                    android:text="Create Match"
                     android:fontFamily="@font/sanfro"
                     android:gravity="center"
-                    android:text="Create Match"
                     android:textColor="#3484F0"
                     android:textSize="18dp"
                     android:textStyle="bold" />
